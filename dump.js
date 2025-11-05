@@ -32,4 +32,6 @@ async function dump() {
   await pool.end();
 }
 
-if (require.main === module) dump().catch(e => { console.error(e); process.exit(1); });
+if (import.meta.url === `file://${process.argv[1]}`) {
+  dump().catch(e => { console.error(e); process.exit(1); });
+}
