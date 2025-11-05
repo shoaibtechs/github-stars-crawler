@@ -171,9 +171,8 @@ async function main() {
   await closePool();
 }
 
-if (require.main === module) {
-  main().catch(err => {
-    console.error('Unhandled error:', err);
-    process.exit(1);
-  });
-}
+main().catch(err => {
+  console.error('Unhandled error:', err);
+  process.exit(1);
+});
+
